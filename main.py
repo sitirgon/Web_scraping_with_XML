@@ -1,6 +1,7 @@
 from requests import get
 import xml.etree.ElementTree as ET
-import os
+from os import path, system
+from time import sleep
 
 
 class Xml_adapter:
@@ -8,7 +9,7 @@ class Xml_adapter:
     def __init__(self, config: str = 'config.xml'):
         self.master = 'Config'
         self.config_name = config
-        check_file = os.path.isfile(self.config_name)
+        check_file = path.isfile(self.config_name)
         if check_file:
             return
         elif not check_file:
@@ -32,5 +33,28 @@ class Xml_adapter:
 
 
 if __name__ == '__main__':
-    pass
-
+    while True:
+        print('''Welcome, choose the action
+1. Add page to scrap
+2. Remove page to scrap
+3. Get info about one page
+4. Get info about multiple page
+    
+0. Exit''')
+        choose = str(input('Your choose: '))
+        match choose:
+            case '1':
+                pass
+            case '2':
+                pass
+            case '3':
+                pass
+            case '4':
+                pass
+            case '0':
+                exit()
+            case _:
+                print('Choose correct task!!!')
+                sleep(1)
+                system('cls')
+                continue
