@@ -1,7 +1,8 @@
 import xml.etree.ElementTree as et
 from os import path, system
 from time import sleep
-
+from page import Page
+from scrap_handler import ScrapHandler
 
 class XmlAdapter:
 
@@ -39,17 +40,28 @@ if __name__ == '__main__':
 2. Remove page to scrap
 3. Get info about one page
 4. Get info about multiple page
+5. Show available page
     
 0. Exit''')
         choose = str(input('Your choose: '))
         match choose:
             case '1':
-                pass
+                system('cls')
+                name = str(input('Name page: '))
+                url = str(input('Url page: '))
+                print('Adding to config...')
+                sleep(0.4)
+                xml.add_to_xml(name, url)
+                print(f'Page {name} added')
+                system('pause')
+                continue
             case '2':
                 pass
             case '3':
                 pass
             case '4':
+                pass
+            case '5':
                 pass
             case '0':
                 exit()
@@ -57,4 +69,4 @@ if __name__ == '__main__':
                 print('Choose correct task!!!')
                 sleep(1)
                 system('cls')
-                continue
+                break
