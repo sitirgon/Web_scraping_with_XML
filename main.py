@@ -28,14 +28,23 @@ if __name__ == '__main__':
                 system('pause')
                 continue
             case '2':
-
-                pass
+                name = str(input('Name page: '))
+                if xml.remove_from_xml(name) == 0:
+                    print('Saved page not exists')
+                    sleep(0.4)
+                else:
+                    print('Removing page...')
+                    sleep(0.4)
+                    print('Page removed')
+                continue
             case '3':
                 pass
             case '4':
                 pass
             case '5':
-                pass
+                system('cls')
+                print('Available page:')
+
             case '0':
                 exit()
             case _:
